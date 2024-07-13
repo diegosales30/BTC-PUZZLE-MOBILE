@@ -104,13 +104,13 @@ async function encontrarBitcoins(min, max, shouldStop) {
                 console.log('Time:', chalk.yellow(tempo));
                 console.log('P-Key found:', chalk.yellow(formattedPkey));
                 console.log('WIF:', chalk.yellow(generateWIF(pkey)));
-                console.log(chalk.red('******************'))
                 const filePath = 'keys.txt';
                 const lineToAppend = `Private key: ${pkey}, WIF: ${generateWIF(pkey)}\n`;
     
                 try {
                     fs.appendFileSync(filePath, lineToAppend);
-                    console.log('salvo em:', chalk.yellow('keys.txt')); 
+                    console.log('chave salva no arquivo:', chalk.yellow('keys.txt'));
+                    console.log(chalk.red('******************'));
                 } catch (err) {
                     console.error('Erro ao escrever chave em arquivo:', err);
                 }
